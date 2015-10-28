@@ -1,0 +1,130 @@
+{
+  "name": "itkg/psa-ndp",
+  "description": "PSA New Digital Peugeot",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "itkg-ahidri",
+      "email": "ayoub.hidri@businessdecision.com"
+    }
+  ],
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/itkg/psa-migration-bundle"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/itkg/psa-NDP-ISOBAR.git"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/itkg/apis.git"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/itkg/itkg.git"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/itkg/psa-ndp-cache"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/itkg/combinedhttpcache"
+    }
+  ],
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "require": {
+    "symfony/swiftmailer-bundle": "2.3.2",
+    "sensio/distribution-bundle": "v4.0.1",
+    "incenteev/composer-parameter-handler": "2.1.0",
+    "noiselabs/smarty-bundle": "dev-master#3e5ae35",
+    "jeroendesloovere/vcard": "1.1.9",
+    "abraham/twitteroauth": "0.4.1",
+    "facebook/php-sdk-v4": "4.0.23",
+    "open-orchestra/open-orchestra-front-bundle": "1.0.0",
+    "open-orchestra/open-orchestra-model-interface": "1.0.0",
+    "open-orchestra/open-orchestra-display-bundle": "1.0.0",
+    "open-orchestra/open-orchestra-base-api-bundle": "1.0.0",
+    "open-orchestra/open-orchestra-theme-bundle": "1.0.0",
+    "itkg/psa-migration-bundle": "dev-develop",
+    "itkg/psa-ndp-cache": "dev-master",
+    "jms/aop-bundle": "1.0.1",
+    "social-links/social-links": "1.4.1",
+    "wurfl/wurfl-api": "1.5.2.1",
+    "Respect/Validation": "0.4.4",
+    "ruler/ruler": "v0.2.0",
+    "shark/simple_html_dom": "master-dev",
+    "zendframework/zendframework1": "~1.12.3",
+    "monolog/monolog": "1.13.1",
+    "itkg/itkg": "dev-master",
+    "itkg/apis": "dev-master",
+    "itkg/consumer-bundle": "dev-master",
+    "madcoda/php-youtube-api": "dev-master",
+    "beberlei/DoctrineExtensions": "^1.0@dev",
+    "itkg/combinedhttpcache": "dev-master",
+    "friendsofsymfony/http-cache-bundle": "~1.0"
+  },
+  "require-dev": {
+    "jmikola/geojson": "1.0",
+    "phpunit/phpunit": "4.0.14",
+    "phake/phake": "*",
+    "phpmd/phpmd": "@stable",
+    "phploc/phploc": "*",
+    "sebastian/phpcpd": "*",
+    "leaphub/phpcs-symfony2-standard": "~2.0.0",
+    "doctrine/migrations": "dev-master#a4f14d3",
+    "doctrine/doctrine-migrations-bundle": "dev-master#6a1bd73",
+    "itkg/psa-NDP-ISOBAR": "dev-master"
+  },
+  "scripts": {
+    "post-install-cmd": [
+      "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
+      "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
+      "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache"
+    ],
+    "post-update-cmd": [
+      "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
+      "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
+      "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache"
+    ]
+  },
+  "config": {
+    "bin-dir": "bin"
+  },
+  "autoload": {
+    "psr-0": {
+      "": "frontend/src/",
+      "Guzzle": "vendor/guzzle/guzzle/src/",
+      "Itkg\\Apis": "vendor/itkg-apis/src/",
+      "Pelican": "backend/library",
+      "Respect": "vendor/Validation/library/",
+      "Assetic": "vendor/kriswallsmith/assetic/src/",
+      "Itkg": "vendor/itkg/src/",
+      "Citroen": "backend/application/library/",
+      "Psa": "backend/application/library/",
+      "Ndp": "backend/application/library/",
+      "Itkg": "backend/app/src/"
+    },
+    "autoload": {
+      "classmap": "distribution/libs/Smarty.class.php"
+    }
+  },
+  "extra": {
+    "symfony-app-dir": "frontend/app",
+    "symfony-web-dir": "frontend/web",
+    "incenteev-parameters": [
+      {
+        "file": "frontend/app/config/parameters.yml"
+      },
+      {
+        "file": "frontend/app/config/parameters_db_dev.yml"
+      },
+      {
+        "file": "frontend/app/config/parameters_app_dev.yml"
+      }
+    ]
+  }
+}
